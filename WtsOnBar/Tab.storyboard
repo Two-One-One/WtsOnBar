@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab View Controller-->
+        <scene sceneID="Yi0-Gi-8mN">
+            <objects>
+                <viewController storyboardIdentifier="TabView" id="UBF-dx-1en" customClass="TabViewController" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="uVt-NM-1EX">
+                        <rect key="frame" x="0.0" y="0.0" width="911" height="574"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcT-tm-ba2">
+                                <rect key="frame" x="822" y="13" width="76" height="32"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <buttonCell key="cell" type="push" title="Salir" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="arT-68-LE6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="terminate:" target="Aha-sn-PEu" id="IWO-Uc-Fja"/>
+                                </connections>
+                            </button>
+                            <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efE-vC-5Vw">
+                                <rect key="frame" x="-8" y="50" width="927" height="510"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <tabViewItems>
+                                    <tabViewItem label="WhatsApp" identifier="" id="yeK-23-qNW">
+                                        <view key="view" id="yCO-kS-S9u">
+                                            <rect key="frame" x="10" y="33" width="907" height="464"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <wkWebView identifier="webkitWts" fixedFrame="YES" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uEw-XN-KUX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="913" height="464"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO">
+                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                        <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO"/>
+                                                    </wkWebViewConfiguration>
+                                                </wkWebView>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="WhatsApp Business" identifier="" id="Gcp-yw-j5L">
+                                        <view key="view" id="v8Q-0z-cRx">
+                                            <rect key="frame" x="10" y="33" width="907" height="464"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                    </tabViewItem>
+                                </tabViewItems>
+                            </tabView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="WtsWebKit" destination="uEw-XN-KUX" id="Dou-ol-1Px"/>
+                    </connections>
+                </viewController>
+                <customObject id="Aha-sn-PEu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="aWV-JG-n89"/>
+            </objects>
+            <point key="canvasLocation" x="313.5" y="-14"/>
+        </scene>
+    </scenes>
+</document>
